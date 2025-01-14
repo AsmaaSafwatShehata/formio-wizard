@@ -1,0 +1,72 @@
+/* Wizard Navigation Container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Individual Steps */
+.page-item {
+    position: relative;
+    text-align: center;
+    margin: 0 10px; /* Space between steps */
+}
+
+.page-link {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #dee2e6; /* Light border */
+    border-radius: 50%; /* Circular steps */
+    background-color: #e9ecef; /* Light gray background */
+    color: #6c757d; /* Gray text */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Active Step */
+.page-item.active .page-link {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #fff; /* White text */
+    border-color: #007bff;
+}
+
+/* Hover Effect for Steps */
+.page-link:hover {
+    background-color: #d0d7de;
+    color: #000;
+}
+
+/* Connect Steps with Lines */
+.page-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 40px;
+    height: 2px;
+    background: #dee2e6; /* Light gray line */
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .page-item {
+        margin-bottom: 10px;
+    }
+
+    .page-item:not(:last-child)::after {
+        display: none;
+    }
+}
